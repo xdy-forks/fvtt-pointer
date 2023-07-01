@@ -87,9 +87,11 @@ export class PointerContainer extends PIXI.Container {
   }
 
   getMouseWorldCoord() {
-    return canvas.app.renderer.plugins.interaction.mouse.getLocalPosition(
-      canvas.stage
-    );
+    if (isNewerVersion(game.version, "11")) {
+      return canvas.mousePosition;
+    }
+
+    return canvas.app.renderer.plugins.interaction.mouse.getLocalPosition(canvas.stage);
   }
 
   ping({
