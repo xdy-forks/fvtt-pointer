@@ -87,7 +87,7 @@ export class PointerContainer extends PIXI.Container {
   }
 
   getMouseWorldCoord() {
-    if (isNewerVersion(game.version, "11")) {
+    if (isNewerVersion(game.version, 11)) {
       return canvas.mousePosition;
     }
 
